@@ -1,0 +1,18 @@
+{
+  "phase1_seconds": 248.5,
+  "rows_staging": 4564956,
+  "staging_bytes": 105636017,
+  "engine": "Apache Spark 3.5.3 (local[1], driver 512m, G1GC, chunked x3)",
+  "rows_raw": 4564958,
+  "rows_out": 4564956,
+  "rows_removed": 2,
+  "raw_csv_bytes": 502429708,
+  "curated_parquet_bytes": 265374851,
+  "compression_ratio": 1.89,
+  "parquet_part_files": 1284,
+  "partitioning": "source_type x year",
+  "distinct_symbols": 525,
+  "date_min": "1927-12-30",
+  "date_max": "2026-09-24",
+  "phase2_seconds": 52.6
+}

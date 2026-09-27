@@ -1,0 +1,69 @@
+{
+  "rows_raw": 4564958,
+  "files_raw": 525,
+  "nulls_per_column": {
+    "null_date": 0,
+    "null_open": 2,
+    "null_high": 2,
+    "null_low": 2,
+    "null_close": 2,
+    "null_adj_close": 2,
+    "null_volume": 0
+  },
+  "null_rows_any_ohlcv": 2,
+  "ohlc_integrity_violations": 450,
+  "future_dates": 0,
+  "pre_1900_dates": 0,
+  "weekend_dates": 1254,
+  "zero_volume_stock_rows": 25048,
+  "abs_return_gt_50pct": 91,
+  "of_which_split_days": 3,
+  "true_anomalies_nonsplit": 88,
+  "duplicate_symbol_date_keys": 0,
+  "duplicate_extra_rows": 0,
+  "date_min": "1927-12-30",
+  "date_max": "2026-09-24",
+  "distinct_symbols": 525,
+  "ohlc_violation_examples": [
+    {
+      "date": "2021-05-05",
+      "Open": "195.97999572753906",
+      "High": "198.63999938964844",
+      "Low": "196.2100067138672",
+      "Close": "198.1300048828125",
+      "symbol": "HUBB"
+    },
+    {
+      "date": "2001-04-10",
+      "Open": "27.0",
+      "High": "28.6299991607666",
+      "Low": "27.309999465942383",
+      "Close": "28.479999542236328",
+      "symbol": "CL_F"
+    },
+    {
+      "date": "2001-06-08",
+      "Open": "28.030000686645508",
+      "High": "28.389999389648438",
+      "Low": "27.799999237060547",
+      "Close": "28.399999618530273",
+      "symbol": "CL_F"
+    },
+    {
+      "date": "2001-09-17",
+      "Open": "27.0",
+      "High": "29.25",
+      "Low": "28.299999237060547",
+      "Close": "28.809999465942383",
+      "symbol": "CL_F"
+    },
+    {
+      "date": "2001-12-14",
+      "Open": "18.700000762939453",
+      "High": "19.25",
+      "Low": "18.290000915527344",
+      "Close": "19.290000915527344",
+      "symbol": "CL_F"
+    }
+  ]
+}

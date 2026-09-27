@@ -1,0 +1,23 @@
+{
+  "producer_ticks": 7308,
+  "spark_processed_events": 9984,
+  "loss_pct": 0.0,
+  "batches": 9,
+  "window_rows": 400,
+  "stream_wall_seconds": 72.6,
+  "throughput_events_per_s": 137.6,
+  "tick_rate_target": 150,
+  "duration_target_s": 60,
+  "trigger": "10 seconds",
+  "avg_latency_ms": 4597.2,
+  "p95_latency_ms": 10126.8,
+  "avg_batch_s": 1.58,
+  "max_batch_s": 3.79,
+  "symbols": 40,
+  "window": "10s tumble / 30s watermark",
+  "final": true,
+  "spark_processed_events_dedup": 7308,
+  "final_windows": 280,
+  "note": "update-mode re-emits revised windows; deduplicated event count = sum of final window n_ticks; foreachBatch sink must upsert by (window,symbol) key",
+  "duplicate_window_emissions": 120
+}

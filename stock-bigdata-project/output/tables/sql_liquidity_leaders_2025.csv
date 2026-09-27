@@ -1,0 +1,13 @@
+symbol,security,sector,avg_daily_dollar_vol_bn
+TSLA,"Tesla, Inc.",Consumer Discretionary,33.75
+NVDA,Nvidia,Information Technology,32.42
+AAPL,Apple Inc.,Information Technology,12.34
+META,Meta Platforms,Communication Services,10.14
+MSFT,Microsoft,Information Technology,10.13
+PLTR,Palantir Technologies,Information Technology,9.89
+AMZN,Amazon,Consumer Discretionary,9.59
+AMD,Advanced Micro Devices,Information Technology,7.62
+GOOGL,Alphabet Inc. (Class A),Communication Services,7.58
+AVGO,Broadcom,Information Technology,7.16
+GOOG,Alphabet Inc. (Class C),Communication Services,4.94
+NFLX,Netflix,Communication Services,4.34

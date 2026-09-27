@@ -1,0 +1,38 @@
+# python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# spark / hadoop runtime junk
+metastore_db/
+derby.log
+spark-warehouse/
+hs_err_pid*.log
+replay_pid*.log
+
+# heavy regenerable data (re-download with src/00_ingest_data.py)
+data/curated/
+data/staging/
+data/raw/stocks/*
+data/raw/indices/*
+!data/raw/stocks/AAPL.csv
+!data/raw/stocks/MSFT.csv
+!data/raw/stocks/NVDA.csv
+!data/raw/stocks/TSLA.csv
+!data/raw/stocks/JPM.csv
+!data/raw/stocks/JNJ.csv
+!data/raw/stocks/XOM.csv
+!data/raw/stocks/WMT.csv
+!data/raw/stocks/MO.csv
+!data/raw/stocks/HD.csv
+!data/raw/indices/IDX_GSPC.csv
+!data/raw/indices/IDX_VIX.csv
+!data/raw/indices/SPY.csv
+!data/raw/indices/BTC-USD.csv
+
+# os / editor
+.DS_Store
+Thumbs.db
+nohup.out

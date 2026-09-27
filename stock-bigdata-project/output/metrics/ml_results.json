@@ -1,0 +1,103 @@
+{
+  "logistic_regression": {
+    "accuracy": 0.5154,
+    "areaUnderROC": 0.4954,
+    "confusion": {
+      "y0_p1": 14134,
+      "y1_p0": 3931,
+      "y1_p1": 15779,
+      "y0_p0": 3436
+    }
+  },
+  "random_forest": {
+    "accuracy": 0.519,
+    "areaUnderROC": 0.4953,
+    "confusion": {
+      "y0_p1": 14784,
+      "y1_p0": 3146,
+      "y1_p1": 16564,
+      "y0_p0": 2786
+    }
+  },
+  "baseline_majority_accuracy": 0.5287,
+  "feature_importance": [
+    {
+      "feature": "vix_ret",
+      "importance": 0.282
+    },
+    {
+      "feature": "ma20_ratio",
+      "importance": 0.1403
+    },
+    {
+      "feature": "dow_f",
+      "importance": 0.1297
+    },
+    {
+      "feature": "range1",
+      "importance": 0.1209
+    },
+    {
+      "feature": "vol21",
+      "importance": 0.0829
+    },
+    {
+      "feature": "ma50_ratio",
+      "importance": 0.0692
+    },
+    {
+      "feature": "ret_lag1",
+      "importance": 0.0615
+    },
+    {
+      "feature": "ret_lag2",
+      "importance": 0.0602
+    },
+    {
+      "feature": "ret_lag5",
+      "importance": 0.0531
+    }
+  ],
+  "meta": {
+    "train_rows": 171870,
+    "test_rows": 37280,
+    "features": [
+      "ret_lag1",
+      "ret_lag2",
+      "ret_lag5",
+      "ma20_ratio",
+      "ma50_ratio",
+      "vol21",
+      "range1",
+      "dow_f",
+      "vix_ret"
+    ],
+    "split": "train<=2022 / test>=2023 (temporal, leakage-free)"
+  },
+  "backtest": {
+    "variants": {
+      "thr_0.50": {
+        "test_days": 932,
+        "strategy_total_return_pct": 133.37,
+        "buyhold_total_return_pct": 227.37,
+        "strategy_ann_pct": 25.75,
+        "buyhold_ann_pct": 37.8,
+        "strategy_sharpe": 1.65,
+        "buyhold_sharpe": 1.95,
+        "avg_exposure": 0.841
+      },
+      "thr_0.55": {
+        "test_days": 932,
+        "strategy_total_return_pct": 0.8,
+        "buyhold_total_return_pct": 227.37,
+        "strategy_ann_pct": 0.22,
+        "buyhold_ann_pct": 37.8,
+        "strategy_sharpe": 0.5,
+        "buyhold_sharpe": 1.95,
+        "avg_exposure": 0.002
+      }
+    },
+    "note": "equal-weight 40-stock portfolio, long when P(up)>thr else flat, costs ignored",
+    "backtest_seconds": 0.9
+  }
+}

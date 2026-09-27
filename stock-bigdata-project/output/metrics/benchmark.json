@@ -1,0 +1,14 @@
+{
+  "spark_W3_scan_s": 9.41,
+  "rows": 4564956,
+  "spark_W1_agg_s": 9.27,
+  "W1_groups": 18502,
+  "spark_W2_filter_agg_s": 6.2,
+  "W2_groups": 19,
+  "pandas_W1_agg_s": 1.38,
+  "pandas_W1_rows": 4564956,
+  "pandas_W2_filter_agg_s": 1.57,
+  "pandas_W2_rows": 356837,
+  "pandas_W3_scan_s": 0.7,
+  "pandas_W3_rows": 4564956
+}

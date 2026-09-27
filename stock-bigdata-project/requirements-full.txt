@@ -1,0 +1,12 @@
+# ---- full offline pipeline (ETL / MR / SQL / ML / streaming / report) ----
+-r requirements.txt
+pyspark==3.5.3
+jdk4py==11.0.13.1          # bundled JDK 11 so Spark/Hadoop run with no system Java
+matplotlib>=3.8
+seaborn>=0.13
+mplfinance>=0.12.10
+pyarrow>=15
+reportlab>=4.0
+psutil
+scipy>=1.11
+pymupdf>=1.24              # optional: PDF page rendering for QA

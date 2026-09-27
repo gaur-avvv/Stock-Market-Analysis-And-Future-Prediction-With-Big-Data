@@ -1,0 +1,432 @@
+{
+  "overview": [
+    {
+      "source_type": "stock",
+      "rows": 4381621,
+      "symbols": 503,
+      "first_date": "1962-01-02",
+      "last_date": "2026-09-23",
+      "avg_ann_vol": 0.373
+    },
+    {
+      "source_type": "sector_etf",
+      "rows": 67643,
+      "symbols": 11,
+      "first_date": "1998-12-22",
+      "last_date": "2026-09-23",
+      "avg_ann_vol": 0.194
+    },
+    {
+      "source_type": "index",
+      "rows": 57396,
+      "symbols": 4,
+      "first_date": "1927-12-30",
+      "last_date": "2026-09-23",
+      "avg_ann_vol": 0.162
+    },
+    {
+      "source_type": "treasury_yield",
+      "rows": 16168,
+      "symbols": 1,
+      "first_date": "1962-01-02",
+      "last_date": "2026-09-23",
+      "avg_ann_vol": 0.192
+    },
+    {
+      "source_type": "etf",
+      "rows": 15398,
+      "symbols": 2,
+      "first_date": "1993-01-29",
+      "last_date": "2026-09-23",
+      "avg_ann_vol": 0.19
+    },
+    {
+      "source_type": "commodity",
+      "rows": 13090,
+      "symbols": 2,
+      "first_date": "2000-08-23",
+      "last_date": "2026-09-23",
+      "avg_ann_vol": 0.278
+    },
+    {
+      "source_type": "volatility_index",
+      "rows": 9250,
+      "symbols": 1,
+      "first_date": "1990-01-02",
+      "last_date": "2026-09-23",
+      "avg_ann_vol": 1.04
+    },
+    {
+      "source_type": "crypto",
+      "rows": 4390,
+      "symbols": 1,
+      "first_date": "2014-09-17",
+      "last_date": "2026-09-24",
+      "avg_ann_vol": 0.491
+    }
+  ],
+  "champions": [
+    {
+      "symbol": "MO",
+      "security": "Altria",
+      "sector": "Consumer Staples",
+      "first_dt": "1962-01-02",
+      "last_dt": "2026-09-23",
+      "first_adj_px": 0.0,
+      "last_adj_px": 68.94999694824219,
+      "total_return_pct": 2981661.1,
+      "cagr_pct": 17.26
+    },
+    {
+      "symbol": "HD",
+      "security": "Home Depot (The)",
+      "sector": "Consumer Discretionary",
+      "first_dt": "1981-09-22",
+      "last_dt": "2026-09-23",
+      "first_adj_px": 0.019999999552965164,
+      "last_adj_px": 296.7200012207031,
+      "total_return_pct": 1810552.3,
+      "cagr_pct": 24.34
+    },
+    {
+      "symbol": "WMT",
+      "security": "Walmart",
+      "sector": "Consumer Staples",
+      "first_dt": "1972-08-25",
+      "last_dt": "2026-09-23",
+      "first_adj_px": 0.009999999776482582,
+      "last_adj_px": 110.52999877929688,
+      "total_return_pct": 964775.0,
+      "cagr_pct": 18.490000000000002
+    },
+    {
+      "symbol": "MSFT",
+      "security": "Microsoft",
+      "sector": "Information Technology",
+      "first_dt": "1986-03-13",
+      "last_dt": "2026-09-23",
+      "first_adj_px": 0.05999999865889549,
+      "last_adj_px": 500.5899963378906,
+      "total_return_pct": 848152.7,
+      "cagr_pct": 25.0
+    },
+    {
+      "symbol": "PGR",
+      "security": "Progressive Corporation",
+      "sector": "Financials",
+      "first_dt": "1980-03-17",
+      "last_dt": "2026-09-23",
+      "first_adj_px": 0.029999999329447746,
+      "last_adj_px": 203.1300048828125,
+      "total_return_pct": 763390.5,
+      "cagr_pct": 21.19
+    },
+    {
+      "symbol": "AMAT",
+      "security": "Applied Materials",
+      "sector": "Information Technology",
+      "first_dt": "1980-03-17",
+      "last_dt": "2026-09-23",
+      "first_adj_px": 0.07000000029802322,
+      "last_adj_px": 474.3800048828125,
+      "total_return_pct": 688174.9,
+      "cagr_pct": 20.919999999999998
+    },
+    {
+      "symbol": "NVDA",
+      "security": "Nvidia",
+      "sector": "Information Technology",
+      "first_dt": "1999-01-22",
+      "last_dt": "2026-09-23",
+      "first_adj_px": 0.03999999910593033,
+      "last_adj_px": 225.50999450683594,
+      "total_return_pct": 600986.0,
+      "cagr_pct": 36.96
+    },
+    {
+      "symbol": "DHR",
+      "security": "Danaher Corporation",
+      "sector": "Health Care",
+      "first_dt": "1978-12-29",
+      "last_dt": "2026-09-23",
+      "first_adj_px": 0.03999999910593033,
+      "last_adj_px": 221.55999755859375,
+      "total_return_pct": 501675.3,
+      "cagr_pct": 19.54
+    },
+    {
+      "symbol": "JNJ",
+      "security": "Johnson & Johnson",
+      "sector": "Health Care",
+      "first_dt": "1962-01-02",
+      "last_dt": "2026-09-23",
+      "first_adj_px": 0.05999999865889549,
+      "last_adj_px": 269.1700134277344,
+      "total_return_pct": 450757.5,
+      "cagr_pct": 13.88
+    },
+    {
+      "symbol": "SYK",
+      "security": "Stryker Corporation",
+      "sector": "Health Care",
+      "first_dt": "1980-03-17",
+      "last_dt": "2026-09-23",
+      "first_adj_px": 0.07999999821186066,
+      "last_adj_px": 273.3999938964844,
+      "total_return_pct": 363367.7,
+      "cagr_pct": 19.27
+    }
+  ],
+  "worst_day": {
+    "date": "2007-07-02",
+    "symbol": "JCI",
+    "security": "Johnson Controls",
+    "sector": "Industrials",
+    "ret_pct": -53.45000076293945,
+    "adj_close": 16.450000762939453,
+    "volume": 11502649
+  },
+  "best_day": {
+    "date": "2016-07-05",
+    "symbol": "DHR",
+    "security": "Danaher Corporation",
+    "ret_pct": 61.220001220703125
+  },
+  "sectors": [
+    {
+      "sector": "Consumer Discretionary",
+      "n_stocks": 47,
+      "avg_daily_ret_bps": 306.04,
+      "avg_ann_vol_pct": 64.2,
+      "dollar_vol_trn": 108.91
+    },
+    {
+      "sector": "Industrials",
+      "n_stocks": 83,
+      "avg_daily_ret_bps": 170.23,
+      "avg_ann_vol_pct": 49.7,
+      "dollar_vol_trn": 57.76
+    },
+    {
+      "sector": "Consumer Staples",
+      "n_stocks": 32,
+      "avg_daily_ret_bps": 168.3,
+      "avg_ann_vol_pct": 38.9,
+      "dollar_vol_trn": 29.67
+    },
+    {
+      "sector": "Information Technology",
+      "n_stocks": 74,
+      "avg_daily_ret_bps": 24.9,
+      "avg_ann_vol_pct": 39.7,
+      "dollar_vol_trn": 193.88
+    },
+    {
+      "sector": "Energy",
+      "n_stocks": 21,
+      "avg_daily_ret_bps": 7.06,
+      "avg_ann_vol_pct": 35.4,
+      "dollar_vol_trn": 20.7
+    },
+    {
+      "sector": "Communication Services",
+      "n_stocks": 23,
+      "avg_daily_ret_bps": 6.69,
+      "avg_ann_vol_pct": 31.3,
+      "dollar_vol_trn": 60.95
+    },
+    {
+      "sector": "Financials",
+      "n_stocks": 75,
+      "avg_daily_ret_bps": 6.42,
+      "avg_ann_vol_pct": 26.8,
+      "dollar_vol_trn": 69.12
+    },
+    {
+      "sector": "Health Care",
+      "n_stocks": 60,
+      "avg_daily_ret_bps": 5.96,
+      "avg_ann_vol_pct": 28.2,
+      "dollar_vol_trn": 59.83
+    },
+    {
+      "sector": "Materials",
+      "n_stocks": 25,
+      "avg_daily_ret_bps": 5.93,
+      "avg_ann_vol_pct": 30.2,
+      "dollar_vol_trn": 13.75
+    },
+    {
+      "sector": "Utilities",
+      "n_stocks": 31,
+      "avg_daily_ret_bps": 4.65,
+      "avg_ann_vol_pct": 22.1,
+      "dollar_vol_trn": 14.43
+    },
+    {
+      "sector": "Real Estate",
+      "n_stocks": 30,
+      "avg_daily_ret_bps": 4.04,
+      "avg_ann_vol_pct": 24.6,
+      "dollar_vol_trn": 11.99
+    },
+    {
+      "sector": "UNKNOWN",
+      "n_stocks": 2,
+      "avg_daily_ret_bps": 3.04,
+      "avg_ann_vol_pct": 20.7,
+      "dollar_vol_trn": 3.7
+    }
+  ],
+  "spx_best_year": {
+    "year": 1933.0,
+    "avg_close": 9.1,
+    "annual_ret_pct": 46.0,
+    "max_drawdown_pct": -82.6,
+    "worst_day_pct": -8.880000114440918
+  },
+  "spx_worst_year": {
+    "year": 1931.0,
+    "avg_close": 13.6,
+    "annual_ret_pct": -48.8,
+    "max_drawdown_pct": -75.8,
+    "worst_day_pct": -9.069999694824219
+  },
+  "vix_corr": [
+    {
+      "era": "1990s",
+      "n_days": 2527,
+      "corr_spx_vix": -0.634
+    },
+    {
+      "era": "2000s",
+      "n_days": 2515,
+      "corr_spx_vix": -0.74
+    },
+    {
+      "era": "2010s",
+      "n_days": 2516,
+      "corr_spx_vix": -0.794
+    },
+    {
+      "era": "2020s",
+      "n_days": 1689,
+      "corr_spx_vix": -0.719
+    }
+  ],
+  "best_month": {
+    "month": 4.0,
+    "avg_ret_bps": 40.75,
+    "n": 302719.0
+  },
+  "worst_month": {
+    "month": 10.0,
+    "avg_ret_bps": 28.44,
+    "n": 315287.0
+  },
+  "dow": [
+    {
+      "dow": 1,
+      "avg_ret_bps": 30.88,
+      "n": 689602
+    },
+    {
+      "dow": 2,
+      "avg_ret_bps": 36.92,
+      "n": 752356
+    },
+    {
+      "dow": 3,
+      "avg_ret_bps": 36.25,
+      "n": 751661
+    },
+    {
+      "dow": 4,
+      "avg_ret_bps": 35.28,
+      "n": 737318
+    },
+    {
+      "dow": 5,
+      "avg_ret_bps": 36.2,
+      "n": 733325
+    }
+  ],
+  "liquidity_top": [
+    {
+      "symbol": "TSLA",
+      "security": "Tesla, Inc.",
+      "sector": "Consumer Discretionary",
+      "avg_daily_dollar_vol_bn": 33.75
+    },
+    {
+      "symbol": "NVDA",
+      "security": "Nvidia",
+      "sector": "Information Technology",
+      "avg_daily_dollar_vol_bn": 32.42
+    },
+    {
+      "symbol": "AAPL",
+      "security": "Apple Inc.",
+      "sector": "Information Technology",
+      "avg_daily_dollar_vol_bn": 12.34
+    },
+    {
+      "symbol": "META",
+      "security": "Meta Platforms",
+      "sector": "Communication Services",
+      "avg_daily_dollar_vol_bn": 10.14
+    },
+    {
+      "symbol": "MSFT",
+      "security": "Microsoft",
+      "sector": "Information Technology",
+      "avg_daily_dollar_vol_bn": 10.13
+    }
+  ],
+  "n_anomaly_days": 9521,
+  "crashes": [
+    {
+      "label": "GFC 2007-09",
+      "peak_to_trough_pct": -56.8,
+      "days_down": 517,
+      "days_to_recover": 1480
+    },
+    {
+      "label": "Dot-com 2000-02",
+      "peak_to_trough_pct": -49.1,
+      "days_down": 929,
+      "days_to_recover": 1694
+    },
+    {
+      "label": "COVID 2020-02",
+      "peak_to_trough_pct": -33.9,
+      "days_down": 33,
+      "days_to_recover": 148
+    }
+  ],
+  "btc": {
+    "symbol": "BTC-USD",
+    "ann_ret_pct": 48.0,
+    "ann_vol_pct": 55.0,
+    "worst_day_pct": -37.20000076293945,
+    "days": 4284
+  },
+  "query_times_s": {
+    "market_overview": 14.4,
+    "alltime_champions": 18.4,
+    "worst_single_days": 14.6,
+    "best_single_days": 7.6,
+    "sector_scoreboard": 4.4,
+    "spx_yearly": 8.5,
+    "vix_spx_correlation": 6.4,
+    "monthly_seasonality": 3.9,
+    "dayofweek_effect": 2.8,
+    "liquidity_leaders_2025": 1.1,
+    "dividend_leaders": 1.1,
+    "anomaly_exhibit": 4.4,
+    "golden_cross_count": 7.7,
+    "crash_windows": 29.4,
+    "crypto_vs_equity": 3.4,
+    "breadth_by_decade": 4.2
+  }
+}

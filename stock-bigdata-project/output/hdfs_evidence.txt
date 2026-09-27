@@ -1,0 +1,260 @@
+# HDFS EVIDENCE — captured 2026-09-24 05:51:22
+
+======================================================================
+## Live JVM daemons (jps)
+======================================================================
+
+$ jps
+7186 NameNode
+16612 SparkSubmit
+7416 Jps
+24554 SparkSubmit
+3626 SparkSubmit
+17389 SparkSubmit
+7262 DataNode
+29695 SparkSubmit
+[rc=0]
+
+======================================================================
+## Cluster report (dfsadmin)
+======================================================================
+
+$ hdfs dfsadmin -report
+Configured Capacity: 10568880128 (9.84 GB)
+Present Capacity: 2316304384 (2.16 GB)
+DFS Remaining: 1807716352 (1.68 GB)
+DFS Used: 508588032 (485.03 MB)
+DFS Used%: 21.96%
+Replicated Blocks:
+	Under replicated blocks: 0
+	Blocks with corrupt replicas: 0
+	Missing blocks: 0
+	Missing blocks (with replication factor 1): 0
+	Low redundancy blocks with highest priority to recover: 0
+	Pending deletion blocks: 0
+Erasure Coded Block Groups: 
+	Low redundancy block groups: 0
+	Block groups with corrupt internal blocks: 0
+	Missing block groups: 0
+	Low redundancy blocks with highest priority to recover: 0
+	Pending deletion blocks: 0
+
+-------------------------------------------------
+Live datanodes (1):
+
+Name: 127.0.0.1:19010 (localhost)
+Hostname: c-6ab48caf-01ed1602-de907a1a6b4c
+Decommission Status : Normal
+Configured Capacity: 10568880128 (9.84 GB)
+DFS Used: 508588032 (485.03 MB)
+Non DFS Used: 7698927616 (7.17 GB)
+DFS Remaining: 1807716352 (1.68 GB)
+DFS Used%: 4.81%
+DFS Remaining%: 17.10%
+Configured Cache Capacity: 0 (0 B)
+Cache Used: 0 (0 B)
+Cache Remaining: 0 (0 B)
+Cache Used%: 100.00%
+Cache Remaining%: 0.00%
+Xceivers: 0
+Last contact: Thu Sep 24 05:52:19 UTC 2026
+Last Block Report: Thu Sep 24 05:51:43 UTC 2026
+Num of Blocks: 527
+[rc=0]
+
+======================================================================
+## Create curated/report zones
+======================================================================
+
+$ hdfs dfs -mkdir -p /datalake/curated/prices /datalake/curated/symbol_dim /datalake/reports/quality /datalake/reports/analytics
+
+[rc=0]
+
+======================================================================
+## Publish curated parquet zone (local -> HDFS)
+======================================================================
+
+$ hdfs dfs -put -f /tmp/arena/tenants/a43e703b-db8f-4b1f-8e3d-3a2b458c2b51/sessions/0c162a26-a922-4955-9358-8d283d07f3e2/workspace/stock-bigdata-project/data/curated/prices/. /datalake/curated/prices/
+
+[rc=0]
+
+======================================================================
+## Publish symbol dimension
+======================================================================
+
+$ hdfs dfs -put -f /tmp/arena/tenants/a43e703b-db8f-4b1f-8e3d-3a2b458c2b51/sessions/0c162a26-a922-4955-9358-8d283d07f3e2/workspace/stock-bigdata-project/data/curated/symbol_dim/. /datalake/curated/symbol_dim/
+
+[rc=0]
+
+======================================================================
+## Publish DQ + SQL reports
+======================================================================
+
+$ hdfs dfs -put -f /tmp/arena/tenants/a43e703b-db8f-4b1f-8e3d-3a2b458c2b51/sessions/0c162a26-a922-4955-9358-8d283d07f3e2/workspace/stock-bigdata-project/data/quality/dq_report_raw.json /datalake/reports/quality/ && hdfs dfs -put -f /tmp/arena/tenants/a43e703b-db8f-4b1f-8e3d-3a2b458c2b51/sessions/0c162a26-a922-4955-9358-8d283d07f3e2/workspace/stock-bigdata-project/output/tables/. /datalake/reports/analytics/ && hdfs dfs -put -f /tmp/arena/tenants/a43e703b-db8f-4b1f-8e3d-3a2b458c2b51/sessions/0c162a26-a922-4955-9358-8d283d07f3e2/workspace/stock-bigdata-project/output/metrics/etl_metrics.json /datalake/reports/quality/
+
+[rc=0]
+
+======================================================================
+## Lake layout (top levels)
+======================================================================
+
+$ hdfs dfs -ls -R /datalake | head -40
+drwxr-xr-x   - root supergroup          0 2026-09-24 05:52 /datalake/curated
+drwxr-xr-x   - root supergroup          0 2026-09-24 05:52 /datalake/curated/prices
+drwxr-xr-x   - root supergroup          0 2026-09-24 05:53 /datalake/curated/prices/prices
+-rw-r--r--   1 root supergroup          0 2026-09-24 05:53 /datalake/curated/prices/prices/_SUCCESS
+drwxr-xr-x   - root supergroup          0 2026-09-24 05:53 /datalake/curated/prices/prices/source_type=commodity
+drwxr-xr-x   - root supergroup          0 2026-09-24 05:53 /datalake/curated/prices/prices/source_type=commodity/year=2000
+-rw-r--r--   1 root supergroup      11100 2026-09-24 05:53 /datalake/curated/prices/prices/source_type=commodity/year=2000/part-00002-01b2257a-d6f6-4332-bfc7-a741e83dfdc3.c000.snappy.parquet
+-rw-r--r--   1 root supergroup      11651 2026-09-24 05:53 /datalake/curated/prices/prices/source_type=commodity/year=2000/part-00002-b2aa4e72-d2ff-4dfc-8a70-ab3d9a61c602.c000.snappy.parquet
+drwxr-xr-x   - root supergroup          0 2026-09-24 05:53 /datalake/curated/prices/prices/source_type=commodity/year=2001
+-rw-r--r--   1 root supergroup      20504 2026-09-24 05:53 /datalake/curated/prices/prices/source_type=commodity/year=2001/part-00005-01b2257a-d6f6-4332-bfc7-a741e83dfdc3.c000.snappy.parquet
+-rw-r--r--   1 root supergroup      21534 2026-09-24 05:53 /datalake/curated/prices/prices/source_type=commodity/year=2001/part-00005-b2aa4e72-d2ff-4dfc-8a70-ab3d9a61c602.c000.snappy.parquet
+drwxr-xr-x   - root supergroup          0 2026-09-24 05:53 /datalake/curated/prices/prices/source_type=commodity/year=2002
+-rw-r--r--   1 root supergroup      21088 2026-09-24 05:53 /datalake/curated/prices/prices/source_type=commodity/year=2002/part-00003-01b2257a-d6f6-4332-bfc7-a741e83dfdc3.c000.snappy.parquet
+-rw-r--r--   1 root supergroup      21894 2026-09-24 05:53 /datalake/curated/prices/prices/source_type=commodity/year=2002/part-00003-b2aa4e72-d2ff-4dfc-8a70-ab3d9a61c602.c000.snappy.parquet
+drwxr-xr-x   - root supergroup          0 2026-09-24 05:53 /datalake/curated/prices/prices/source_type=commodity/year=2003
+-rw-r--r--   1 root supergroup      20892 2026-09-24 05:53 /datalake/curated/prices/prices/source_type=commodity/year=2003/part-00001-01b2257a-d6f6-4332-bfc7-a741e83dfdc3.c000.snappy.parquet
+-rw-r--r--   1 root supergroup      21994 2026-09-24 05:53 /datalake/curated/prices/prices/source_type=commodity/year=2003/part-00001-b2aa4e72-d2ff-4dfc-8a70-ab3d9a61c602.c000.snappy.parquet
+drwxr-xr-x   - root supergroup          0 2026-09-24 05:53 /datalake/curated/prices/prices/source_type=commodity/year=2004
+-rw-r--r--   1 root supergroup      21120 2026-09-24 05:53 /datalake/curated/prices/prices/source_type=commodity/year=2004/part-00000-01b2257a-d6f6-4332-bfc7-a741e83dfdc3.c000.snappy.parquet
+-rw-r--r--   1 root supergroup      21833 2026-09-24 05:53 /datalake/curated/prices/prices/source_type=commodity/year=2004/part-00000-b2aa4e72-d2ff-4dfc-8a70-ab3d9a61c602.c000.snappy.parquet
+drwxr-xr-x   - root supergroup          0 2026-09-24 05:53 /datalake/curated/prices/prices/source_type=commodity/year=2005
+-rw-r--r--   1 root supergroup      20841 2026-09-24 05:53 /datalake/curated/prices/prices/source_type=commodity/year=2005/part-00005-01b2257a-d6f6-4332-bfc7-a741e83dfdc3.c000.snappy.parquet
+-rw-r--r--   1 root supergroup      21996 2026-09-24 05:53 /datalake/curated/prices/prices/source_type=commodity/year=2005/part-00005-b2aa4e72-d2ff-4dfc-8a70-ab3d9a61c602.c000.snappy.parquet
+drwxr-xr-x   - root supergroup          0 2026-09-24 05:53 /datalake/curated/prices/prices/source_type=commodity/year=2006
+-rw-r--r--   1 root supergroup      21295 2026-09-24 05:53 /datalake/curated/prices/prices/source_type=commodity/year=2006/part-00005-01b2257a-d6f6-4332-bfc7-a741e83dfdc3.c000.snappy.parquet
+-rw-r--r--   1 root supergroup      21934 2026-09-24 05:53 /datalake/curated/prices/prices/source_type=commodity/year=2006/part-00005-b2aa4e72-d2ff-4dfc-8a70-ab3d9a61c602.c000.snappy.parquet
+drwxr-xr-x   - root supergroup          0 2026-09-24 05:53 /datalake/curated/prices/prices/source_type=commodity/year=2007
+-rw-r--r--   1 root supergroup      21535 2026-09-24 05:53 /datalake/curated/prices/prices/source_type=commodity/year=2007/part-00001-01b2257a-d6f6-4332-bfc7-a741e83dfdc3.c000.snappy.parquet
+-rw-r--r--   1 root supergroup      22179 2026-09-24 05:53 /datalake/curated/prices/prices/source_type=commodity/year=2007/part-00001-b2aa4e72-d2ff-4dfc-8a70-ab3d9a61c602.c000.snappy.parquet
+drwxr-xr-x   - root supergroup          0 2026-09-24 05:53 /datalake/curated/prices/prices/source_type=commodity/year=2008
+-rw-r--r--   1 root supergroup      22107 2026-09-24 05:53 /datalake/curated/prices/prices/source_type=commodity/year=2008/part-00004-01b2257a-d6f6-4332-bfc7-a741e83dfdc3.c000.snappy.parquet
+-rw-r--r--   1 root supergroup      22274 2026-09-24 05:53 /datalake/curated/prices/prices/source_type=commodity/year=2008/part-00004-b2aa4e72-d2ff-4dfc-8a70-ab3d9a61c602.c000.snappy.parquet
+drwxr-xr-x   - root supergroup          0 2026-09-24 05:53 /datalake/curated/prices/prices/source_type=commodity/year=2009
+-rw-r--r--   1 root supergroup      22144 2026-09-24 05:53 /datalake/curated/prices/prices/source_type=commodity/year=2009/part-00003-01b2257a-d6f6-4332-bfc7-a741e83dfdc3.c000.snappy.parquet
+-rw-r--r--   1 root supergroup      22218 2026-09-24 05:53 /datalake/curated/prices/prices/source_type=commodity/year=2009/part-00003-b2aa4e72-d2ff-4dfc-8a70-ab3d9a61c602.c000.snappy.parquet
+drwxr-xr-x   - root supergroup          0 2026-09-24 05:53 /datalake/curated/prices/prices/source_type=commodity/year=2010
+-rw-r--r--   1 root supergroup      22044 2026-09-24 05:53 /datalake/curated/prices/prices/source_type=commodity/year=2010/part-00003-01b2257a-d6f6-4332-bfc7-a741e83dfdc3.c000.snappy.parquet
+-rw-r--r--   1 root supergroup      22195 2026-09-24 05:53 /datalake/curated/prices/prices/source_type=commodity/year=2010/part-00003-b2aa4e72-d2ff-4dfc-8a70-ab3d9a61c602.c000.snappy.parquet
+drwxr-xr-x   - root supergroup          0 2026-09-24 05:53 /datalake/curated/prices/prices/source_type=commodity/year=2011
+-rw-r--r--   1 root supergroup      22216 2026-09-24 05:53 /datalake/curated/prices/prices/source_type=commodity/year=2011/part-00005-01b2257a-d6f6-4332-bfc7-a741e83dfdc3.c000.snappy.parquet
+[rc=0]
+
+======================================================================
+## Zone sizes
+======================================================================
+
+$ hdfs dfs -du -s -h /datalake/raw /datalake/curated /datalake/mr_output /datalake/reports
+479.2 M  479.2 M  /datalake/raw
+251.2 M  251.2 M  /datalake/curated
+2.4 K    2.4 K    /datalake/mr_output
+102.1 K  102.1 K  /datalake/reports
+[rc=0]
+
+======================================================================
+## File/dir counts per zone
+======================================================================
+
+$ hdfs dfs -count /datalake/raw/stocks /datalake/curated/prices /datalake/reports/analytics
+1          503          481360813 /datalake/raw/stocks
+         380          642          263311231 /datalake/curated/prices
+           2           18             102353 /datalake/reports/analytics
+[rc=0]
+
+======================================================================
+## Sample curated partition listing
+======================================================================
+
+$ hdfs dfs -ls /datalake/curated/prices/source_type=stock | head -8
+ls: `/datalake/curated/prices/source_type=stock': No such file or directory
+[rc=0]
+
+======================================================================
+## MR output still resident
+======================================================================
+
+$ hdfs dfs -cat /datalake/mr_output/yearly_activity/part-00000 | head -6
+1962	rows	6237
+1962	vol	3221649157
+1963	rows	6275
+1963	vol	2908598751
+1964	rows	6325
+1964	vol	2740317003
+[rc=0]
+
+======================================================================
+## Filesystem health (fsck)
+======================================================================
+
+$ hdfs fsck /datalake
+FSCK started by root (auth:SIMPLE) from /127.0.0.1 for path /datalake at Thu Sep 24 05:54:19 UTC 2026
+
+......
+.....
+Status: HEALTHY
+ Number of data-nodes:	1
+ Number of racks:		1
+ Total dirs:			396
+ Total symlinks:		0
+
+Replicated Blocks:
+ Total size:	765913567 B
+ Total files:	1192
+ Total blocks (validated):	1189 (avg. block size 644166 B)
+ Minimally replicated blocks:	1189 (100.0 %)
+ Over-replicated blocks:	0 (0.0 %)
+ Under-replicated blocks:	0 (0.0 %)
+ Mis-replicated blocks:		0 (0.0 %)
+ Default replication factor:	1
+ Average block replication:	1.0
+ Missing blocks:		0
+ Corrupt blocks:		0
+ Missing replicas:		0 (0.0 %)
+ Blocks queued for replication:	0
+
+Erasure Coded Block Groups:
+ Total size:	0 B
+ Total files:	0
+ Total block groups (validated):	0
+ Minimally erasure-coded block groups:	0
+ Over-erasure-coded block groups:	0
+ Under-erasure-coded block groups:	0
+ Unsatisfactory placement block groups:	0
+ Average block group size:	0.0
+ Missing block groups:		0
+ Corrupt block groups:		0
+ Missing internal blocks:	0
+ Blocks queued for replication:	0
+FSCK ended at Thu Sep 24 05:54:19 UTC 2026 in 217 milliseconds
+
+
+The filesystem under path '/datalake' is HEALTHY
+Connecting to namenode via http://localhost:19070/fsck?ugi=root&path=%2Fdatalake
+[rc=0]
+
+======================================================================
+## FINAL LAKE LAYOUT (after curated publish)
+======================================================================
+$ hdfs dfs -du -s -h /datalake/raw /datalake/staging* /datalake/curated /datalake/mr_output /datalake/reports
+479.2 M  479.2 M  /datalake/raw
+251.2 M  251.2 M  /datalake/curated
+2.4 K    2.4 K    /datalake/mr_output
+102.1 K  102.1 K  /datalake/reports
+
+$ hdfs dfs -count /datalake/raw/stocks /datalake/curated/prices
+           1          503          481360813 /datalake/raw/stocks
+         379          642          263311231 /datalake/curated/prices
+
+$ hdfs dfs -ls /datalake/curated/prices | head -6
+Found 9 items
+-rw-r--r--   1 root supergroup          0 2026-09-24 05:53 /datalake/curated/prices/_SUCCESS
+drwxr-xr-x   - root supergroup          0 2026-09-24 05:53 /datalake/curated/prices/source_type=commodity
+drwxr-xr-x   - root supergroup          0 2026-09-24 05:53 /datalake/curated/prices/source_type=crypto
+drwxr-xr-x   - root supergroup          0 2026-09-24 05:52 /datalake/curated/prices/source_type=etf
+drwxr-xr-x   - root supergroup          0 2026-09-24 05:52 /datalake/curated/prices/source_type=index
+
+$ hdfs fsck /datalake | tail -3
+
+
+The filesystem under path '/datalake' is HEALTHY

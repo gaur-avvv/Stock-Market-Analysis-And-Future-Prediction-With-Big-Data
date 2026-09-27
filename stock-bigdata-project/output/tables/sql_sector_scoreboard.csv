@@ -1,0 +1,13 @@
+sector,n_stocks,avg_daily_ret_bps,avg_ann_vol_pct,dollar_vol_trn
+Consumer Discretionary,47,306.04,64.2,108.91
+Industrials,83,170.23,49.7,57.76
+Consumer Staples,32,168.3,38.9,29.67
+Information Technology,74,24.9,39.7,193.88
+Energy,21,7.06,35.4,20.7
+Communication Services,23,6.69,31.3,60.95
+Financials,75,6.42,26.8,69.12
+Health Care,60,5.96,28.2,59.83
+Materials,25,5.93,30.2,13.75
+Utilities,31,4.65,22.1,14.43
+Real Estate,30,4.04,24.6,11.99
+UNKNOWN,2,3.04,20.7,3.7
